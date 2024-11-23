@@ -11,9 +11,11 @@ export default function Nav() {
   ]
   return (
     <nav>
-      {navLinks.map((item) => (
-        <NavLinks href={item.href}>{item.name}</NavLinks>
-      ))}
+      <ul>
+        {navLinks.map((item) => (
+          <NavLinks href={item.href}>{item.name}</NavLinks>
+        ))}
+      </ul>
     </nav>
   )
 }

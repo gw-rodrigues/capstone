@@ -28,29 +28,28 @@ export default function FooterNav() {
     { name: 'Login', href: 'login' },
   ]
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '300px',
-        backgroundColor: 'darkgray',
-        display: 'flex',
-      }}
-    >
+    <section>
       <nav>
-        {navLinks.map((item) => (
-          <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
-        ))}
+        <ul>
+          {navLinks.map((item) => (
+            <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
+          ))}
+        </ul>
       </nav>
       <nav>
-        {ContactLinks.map((item) => (
-          <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
-        ))}
+        <ul>
+          {ContactLinks.map((item) => (
+            <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
+          ))}
+        </ul>
       </nav>
       <nav>
-        {SocialLinks.map((item) => (
-          <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
-        ))}
+        <ul>
+          {SocialLinks.map((item) => (
+            <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
+          ))}
+        </ul>
       </nav>
-    </div>
+    </section>
   )
 }

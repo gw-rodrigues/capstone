@@ -13,7 +13,12 @@ function App() {
         <img src="/Logo.svg" alt="Little Lemon" width={200} />
         <Nav />
       </Header>
-      <Main></Main>
+      <Main>
+        <section className="hero">a</section>
+        <section className="highlights">a</section>
+        <section className="testimonials">a</section>
+        <article>a</article>
+      </Main>
       <Footer>
         <FooterNav />
       </Footer>
