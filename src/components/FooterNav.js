@@ -29,7 +29,9 @@ export default function FooterNav() {
   ]
   return (
     <section>
+      <img src="/Logo-small.svg" alt="Little Lemon" />
       <nav>
+        <h3>Little Lemon</h3>
         <ul>
           {navLinks.map((item) => (
             <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
@@ -37,6 +39,7 @@ export default function FooterNav() {
         </ul>
       </nav>
       <nav>
+        <h3>Contact</h3>
         <ul>
           {ContactLinks.map((item) => (
             <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>
@@ -44,6 +47,7 @@ export default function FooterNav() {
         </ul>
       </nav>
       <nav>
+        <h3>Social media links</h3>
         <ul>
           {SocialLinks.map((item) => (
             <FooterNavLinks href={item.href}>{item.name}</FooterNavLinks>

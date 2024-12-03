@@ -2,8 +2,8 @@ export default function Footer({ children }) {
   return (
     <footer>
       <section className="container">
-        <img src="/Logo.svg" alt="Little Lemon" width={200} />
         {children}
+        <span>all rights reserved. Little Lemon 2024.</span>
       </section>
     </footer>
   )
