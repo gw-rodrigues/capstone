@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
+
 export default function NavLinks({ children, href }) {
   return (
     <li>
-      <a href={href}>{children}</a>
+      <Link to={href}>{children}</Link>
     </li>
   )
 }

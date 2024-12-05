@@ -6,11 +6,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   const navLinks = [
-    { name: 'Home', href: 'home' },
+    { name: 'Home', href: '' },
     { name: 'About', href: 'about' },
     { name: 'Menu', href: 'menu' },
     { name: 'Reservations', href: 'reservations' },
-    { name: 'Order Online', href: 'order' },
+    { name: 'Order Online', href: 'booking' },
     { name: 'Login', href: 'login' },
   ]
 

@@ -24,7 +24,7 @@ export default function FooterNav() {
     { name: 'About', href: 'about' },
     { name: 'Menu', href: 'menu' },
     { name: 'Reservations', href: 'reservations' },
-    { name: 'Order Online', href: 'order' },
+    { name: 'Order Online', href: 'booking' },
     { name: 'Login', href: 'login' },
   ]
   return (

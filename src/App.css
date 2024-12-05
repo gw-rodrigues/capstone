@@ -219,6 +219,85 @@ button:hover {
   gap: 1rem;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+form fieldset {
+  border: 1px solid var(--secondary---gray);
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+}
+
+form fieldset legend {
+  position: relative;
+  margin: 0 auto;
+  font-size: var(--card-title);
+  font-weight: 700;
+}
+
+form fieldset .field-group > * {
+  width: 100%;
+}
+
+form fieldset .field-group + .field-group {
+  margin-top: 2rem;
+}
+
+form fieldset .field-group label {
+  font-size: var(--card-title);
+  font-weight: 700;
+}
+
+form fieldset .field-group label span {
+  font-size: var(--paragraph);
+  font-weight: 500;
+}
+
+form input,
+form select {
+  border: 1px solid var(--secondary---gray);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  color: var(--secondary---dark-gray);
+}
+
+form input:focus,
+form select:focus {
+  outline: 1px solid var(--primary---yellow); /* Define um contorno azul */
+}
+
+form .radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+form .radio-group label input {
+  display: none;
+}
+
+form .radio-group label {
+  border: 1px solid var(--secondary---gray);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  flex: 1 1 125px;
+  text-align: center;
+  font-size: var(--paragraph) !important;
+  font-weight: 500 !important;
+}
+
+form .radio-group label:has(input:checked) {
+  background-color: var(--primary---yellow);
+}
+
+form .button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
 header,
 main,
 footer {
@@ -338,6 +417,51 @@ main .hero .container .overlay {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--image-drop-shadow);
+}
+
+main .banner {
+  height: 560px;
+  position: relative;
+}
+
+main .banner .backdrop {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 560px;
+}
+
+main .banner .backdrop::after {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 560px;
+  content: '';
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+}
+
+main .banner .backdrop img {
+  width: 100%;
+  height: auto;
+  min-height: 560px;
+  object-fit: cover;
+}
+
+main .banner .container {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
 }
 
 main .testimonials::after {
