@@ -1,18 +1,101 @@
 import Main from '../components/Main'
 import Banner1 from '../assets/b-1.jpg'
-import Star from '../assets/start.svg'
 
-import H1 from '../assets/h1.png'
-import H2 from '../assets/h2.png'
-import H3 from '../assets/h3.png'
-
-import Bike from '../assets/bike.svg'
-
-import Chef1 from '../assets/chef-1.png'
-import Chef2 from '../assets/chef-2.png'
+import { FormInput } from '../components/FormInput'
+import { FormNumber } from '../components/FormNumber'
+import { FormRadio, FormRadioOption } from '../components/FormRadio'
+import { FormSelect } from '../components/FormSelect'
+import { useState } from 'react'
 
 export default function BookingPage() {
-  const handleSubmit = () => {}
+  const [numDinners, setNumDinner] = useState(0)
+  const bookingTime = [
+    {
+      id: 1,
+      value: '12:00',
+    },
+    {
+      id: 2,
+      value: '12:30',
+    },
+    {
+      id: 3,
+      value: '13:00',
+    },
+    {
+      id: 4,
+      value: '13:30',
+    },
+    {
+      id: 5,
+      value: '14:00',
+    },
+    {
+      id: 6,
+      value: '14:30',
+    },
+    {
+      id: 7,
+      value: '15:00',
+    },
+    {
+      id: 8,
+      value: '18:00',
+    },
+    {
+      id: 9,
+      value: '18:30',
+    },
+    {
+      id: 10,
+      value: '19:00',
+    },
+    {
+      id: 11,
+      value: '19:30',
+    },
+    {
+      id: 12,
+      value: '20:00',
+    },
+    {
+      id: 13,
+      value: '20:30',
+    },
+    {
+      id: 14,
+      value: '21:00',
+    },
+  ]
+  const occasionType = [
+    {
+      id: 0,
+      value: 'Normal',
+    },
+    {
+      id: 1,
+      value: 'Aniversary',
+    },
+    {
+      id: 2,
+      value: 'Romantic',
+    },
+    {
+      id: 3,
+      value: 'Thematic',
+    },
+  ]
+
+  function handleNumDinner(action) {
+    if (action === 'minus' && numDinners > 0) {
+      setNumDinner((prev) => prev - 1)
+    }
+    if (action === 'plus' && numDinners < 10) {
+      setNumDinner((prev) => prev + 1)
+    }
+  }
+
+  function handleSubmit() {}
 
   return (
     <Main>
@@ -34,121 +117,88 @@ export default function BookingPage() {
           <form onSubmit={handleSubmit} name="booking">
             <fieldset>
               <legend>Personal information</legend>
-              <div className="field-group">
-                <label for="firstname">
-                  Firstname <span>*Required</span>
-                </label>
+              <FormInput
+                labelFor="firstname"
+                labelText="Firstname"
+                required={true}
+              >
                 <input
                   type="text"
                   id="firstname"
                   name="firstname"
                   placeholder="firstname..."
-                ></input>
-              </div>
-              <div className="field-group">
-                <label for="lastname">
-                  Lastname <span>*Required</span>
-                </label>
+                />
+              </FormInput>
+              <FormInput
+                labelFor="lastname"
+                labelText="Lastname"
+                required={true}
+              >
                 <input
                   type="text"
                   id="lastname"
                   name="lastname"
                   placeholder="lastname..."
-                ></input>
-              </div>
-              <div className="field-group">
-                <label for="email">
-                  E-mail <span>*Required</span>
-                </label>
-
+                />
+              </FormInput>
+              <FormInput labelFor="email" labelText="E-mail" required={true}>
                 <input
                   type="text"
                   id="email"
                   name="email"
                   placeholder="e-mail..."
-                ></input>
-              </div>
+                />
+              </FormInput>
             </fieldset>
             <fieldset>
               <legend>Reserve information</legend>
-              <div className="field-group">
-                <label for="date">
-                  Date: <span>*Required</span>
-                </label>
+              <FormInput labelFor="date" labelText="date" required={true}>
                 <input type="date" id="date" name="date" />
-              </div>
-              <div className="field-group">
-                <label for="time">
-                  Time: <span>*Required</span>
-                </label>
-                <div className="radio-group">
-                  <label class="btn">
-                    <input type="radio" name="time" value="12:00" />
-                    12:00
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="12:30" />
-                    12:30
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="13:00" />
-                    13:00
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="13:30" />
-                    13:30
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="14:00" />
-                    14:00
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="14:30" />
-                    14:30
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="15:00" />
-                    15:00
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="18:00" />
-                    18:00
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="18:30" />
-                    18:30
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="19:00" />
-                    19:00
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="19:30" />
-                    19:30
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="20:00" />
-                    20:00
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="20:30" />
-                    20:30
-                  </label>
-                  <label class="btn">
-                    <input type="radio" name="time" value="21:00" />
-                    21:00
-                  </label>
-                </div>
-              </div>
+              </FormInput>
 
-              <div className="field-group">
-                <label for="occasion">Occasion:</label>
+              <FormRadio labelFor="time" labelText="Time" required={true}>
+                {bookingTime.map((item) => (
+                  <FormRadioOption labelText={item.value}>
+                    <input
+                      key={`time-${item.id}`}
+                      type="radio"
+                      name="time"
+                      value={item.value}
+                    />
+                  </FormRadioOption>
+                ))}
+              </FormRadio>
+
+              <FormNumber
+                labelFor="dinners"
+                labelText="Number dinners"
+                required={true}
+                handleValue={handleNumDinner}
+              >
+                <input
+                  type="number"
+                  id="dinners"
+                  name="dinners"
+                  placeholder="0"
+                  max={10}
+                  min={1}
+                  value={numDinners}
+                />
+              </FormNumber>
+
+              <FormSelect
+                labelFor="occasion"
+                labelText="Occasion"
+                required={true}
+              >
                 <select id="occasion" name="occasion">
-                  <option value="Aniversary">Aniversary</option>
-                  <option value="Romantic">Romantic</option>
-                  <option value="Thematic">Thematic</option>
+                  {occasionType.map((item) => (
+                    <option key={`occasion-${item.id}`} value={item.value}>
+                      {item.value}
+                    </option>
+                  ))}
                 </select>
-              </div>
+              </FormSelect>
             </fieldset>
             <div className="button-group">
               <button type="submit">Confirm reserve</button>
