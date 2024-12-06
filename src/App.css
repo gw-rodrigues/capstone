@@ -298,6 +298,36 @@ form .button-group {
   justify-content: flex-end;
 }
 
+form .number-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+form .number-group button {
+  flex: 1 1 100px;
+  font-weight: 500 !important;
+}
+
+form .number-group input {
+  flex: 1 1 300px;
+  text-align: center;
+  font-weight: 700;
+  border: 2px solid var(--primary---yellow);
+}
+
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para navegadores Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 header,
 main,
 footer {
@@ -772,5 +802,15 @@ footer span {
   footer .container section {
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media (width <= 48rem) {
+  form .number-group {
+    display: block;
+  }
+  form .number-group > * {
+    width: 100%;
+    margin: 0.5rem 0;
   }
 }
